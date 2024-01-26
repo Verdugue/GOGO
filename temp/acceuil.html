@@ -1,0 +1,38 @@
+{{define "acceuil"}}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>GoMan</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../static/css/acceuil.css">
+</head>
+<body>
+    <div class="giga-container">
+    <div class="container">
+        <h1>Jeu   du   pe_du</h1>
+        <p id="h2">Choisissez la catégorie : </p>
+        <div class="difficulty-selection">
+            <form action="/jeu" method="get">
+                <select name="difficulty" id="difficulty-select">
+                    <option value="facile">Facile</option>
+                    <option value="moyen">Moyen</option>
+                    <option value="difficile">Difficile</option>
+                    <option value="pays">Pays</option>
+                    <option value="capitales">Capitales</option>
+                    <option value="animaux">Animaux</option>
+                    <option value="musique">Musique</option>
+                    <option value="sport">Sport</option>
+                </select>
+                <input id="submit" type="image" name="submit" src="../static/img/fleche.png" alt="Submit"  />
+            </form>
+        </div>
+    </div>
+    
+    <div class="additional-links">
+            <a href="/regle" class="aide">Page d'Aide</a>
+            <a href="/mention" class="legales">Mentions Légales</a>
+    </div>
+</div>
+</body>
+</html>
+{{end}}

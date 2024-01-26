@@ -1,0 +1,55 @@
+{{define "jeux"}}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>GoMan - Jeu</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../static/css/jeux.css">
+</head>
+<body class="{{.Difficulty}}">
+    <div class="container-off">
+        <div class="container">
+            <h1>Jeu du Pendu</h1>
+            
+            <div class="game-info">
+                <p>Mot à deviner : {{.DisplayWord}}</p>
+                    <img class="imageee"src="../static/img/pd{{.Errors}}.png">
+                <p>Erreurs : {{.Errors}} / {{.MaxTries}}</p>
+            </div>
+            {{if or (eq .DisplayWord .Word) (ge .Errors .MaxTries)}}
+                {{/* Si le joueur a gagné */}}
+                {{if eq .DisplayWord .Word}}
+                <div class="fin">
+                    <img src="../static/img/bravo.gif">
+                </div>
+                {{else}}
+                    {{/* Si le joueur a perdu */}}
+                    <div class="fin">
+                        <img id="loose" src="../static/img/oops.gif">
+                    </div>
+                    <div class="reveal">
+                    <p id="reveal">Mot caché était :</p> <p id="wordd">{{.Word}}</p><!-- Afficher le mot caché en cas de défaite -->
+                </div>
+                {{end}}
+            {{else}}
+                {{/* Le jeu est encore en cours, afficher les lettres déjà devinées */}}
+                <div class="tester">
+                    <p>Lettres déjà devinées : {{range $key, $value := .GuessedLetters}}{{$key}} {{end}}</p>
+                </div>
+                <div class="letters">
+                    {{range .Alphabet}}
+                        <button class="letter-button" onclick="guessLetter('{{.}}')">{{.}}</button>
+                    {{end}}
+                </div>
+            {{end}}
+            <script src="../static/js/scrypt.js"></script>
+
+            <div class="yes">
+                <a class="yes2" href="/acceuil">Changer de difficultée.</a>
+            </div>
+        </div>
+        </div>
+    </div>
+</body>
+</html>
+{{end}}

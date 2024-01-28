@@ -30,6 +30,13 @@ type GameState struct {
 // Pointeur vers l'état actuel du jeu (GameState) pour chaque partie.
 var currentGameState *GameState
 
+func Erreur(w http.ResponseWriter, r *http.Request) {
+    w.WriteHeader(http.StatusNotFound)
+    err := Temps.Temp.ExecuteTemplate(w, "erreur", nil)
+    if err != nil {
+        http.Error(w, "Erreur interne du serveur", http.StatusInternalServerError)
+    }
+}
 
 //Fonction de la page principale du jeu.
 func Acceuil(w http.ResponseWriter, r *http.Request) {

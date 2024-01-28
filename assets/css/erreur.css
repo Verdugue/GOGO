@@ -1,0 +1,43 @@
+.potence {
+    
+    width:300px;
+    
+    
+}
+
+.wrapper {
+    height: 99%; 
+  width: 99%; 
+  background: #ffa9a9;
+    position: absolute;
+    
+}
+
+.center-vertically-and-horizontally {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    flex-direction:column;
+    display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+#id {
+    display:flex;
+    justify-content:center;
+    
+}
+
+.neuille {
+    color:white;
+    
+    
+}
+
+body {
+background: #ffa9a9;
+    
+}

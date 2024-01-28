@@ -15,7 +15,7 @@ func InitRoute() {
 	http.HandleFunc("/jeu", jeux.Jeux)         // Gestionnaire pour la page du jeu
 	http.HandleFunc("/regle", jeux.Regle)     // Gestionnaire pour la page des règles
 	http.HandleFunc("/mention", jeux.Mention) // Gestionnaire pour la page des mentions légales
-
+	http.HandleFunc("/", jeux.Erreur)
 	// Serveur de fichiers statiques pour servir les ressources comme les CSS, images, etc.
 	rootDoc, _ := os.Getwd() // Obtient le répertoire de travail actuel
 	fileserver := http.FileServer(http.Dir(rootDoc + "/assets")) // Crée un serveur de fichiers statiques

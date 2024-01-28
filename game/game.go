@@ -53,16 +53,7 @@ func Mention(w http.ResponseWriter, r *http.Request) {
 
 }
 
-func Sommaire(w http.ResponseWriter, r *http.Request) {
-	//J'initie le template du sommaire
 
-	//j'initie le template du sommaire et renvoie une erreur si le template n'est pas trouve
-	err := Temps.Temp.ExecuteTemplate(w, "sommaire", nil)
-	if err != nil {
-		http.Error(w, err.Error(), http.StatusInternalServerError)
-	}
-
-}
 
 func Jeux(w http.ResponseWriter, r *http.Request) {
 	defer func() {

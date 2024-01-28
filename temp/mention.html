@@ -4,37 +4,87 @@
 <head>
     <meta charset="UTF-8">
     <title>Mentions Légales - Jeu du Pendu</title>
+    <link rel="stylesheet" href="../static/css/mention.css">
 </head>
 <body>
-    <div class="container">
-        <header>
+    <div class="wrapper">
+        <!-- En-tête de la page des mentions légales -->
+        <div class="header">
             <h1>Mentions Légales</h1>
-        </header>
+        </div>
 
-        <section class="copyright">
-            <h2>Droits d'Auteur</h2>
-            <p>Le contenu et les œuvres de ce jeu sont protégés par le droit d'auteur et sont la propriété de [Votre Nom ou celui de votre entreprise]. Toute reproduction, modification, distribution ou utilisation au-delà de l'étendue du droit d'auteur nécessite un consentement écrit préalable de notre part.</p>
-        </section>
+        <!-- Plusieurs sections déroulantes, chacune avec un titre et un contenu caché -->
+        <!-- Chaque 'accordion' est un en-tête cliquable qui déroule le contenu associé 'panel' -->
+        
+        <!-- Section 1 : Identification de l'Éditeur et de l'Hébergeur -->
 
-        <section class="terms-of-use">
-            <h2>Conditions d'Utilisation</h2>
-            <p>En utilisant ce jeu, vous acceptez de ne pas copier, modifier, altérer ou vendre les éléments de ce jeu. Ce jeu est fourni "tel quel" sans aucune garantie. L'utilisateur joue à ses propres risques.</p>
-        </section>
+        <div class="accordion" onclick="toggleSection('section1')">Identification de l'Éditeur et de l'Hébergeur</div>
+        <div class="panel" id="section1">
+                Le jeu est édité par Gohang, situé à 220 gohang rue de la langue. Numéro d'identification de l'entreprise : 324243543345121196TR12345324.
 
-        <section class="disclaimer">
-            <h2>Avertissement</h2>
-            <p>Nous ne sommes pas responsables des dommages résultant de l'utilisation de ce jeu. Toutes les actions entreprises par l'utilisateur sont de sa propre responsabilité.</p>
-        </section>
+                L'hébergement du jeu est assuré par Gohang, 220 Gohang rue de la langue, +33 7 68 01 97 19. 
+                <!-- Contenu de la section 1 -->
+        </div>
 
-        <section class="privacy-policy">
-            <h2>Politique de Confidentialité</h2>
-            <p>Les données personnelles collectées lors de l'utilisation du jeu sont traitées conformément à notre politique de confidentialité. Nous nous engageons à protéger la vie privée de nos utilisateurs.</p>
-        </section>
+        <!-- Section 2 : Droits d'Auteur et Propriété Intellectuelle -->
+        <div class="accordion" onclick="toggleSection('section2')">Droits d'Auteur et Propriété Intellectuelle</div>
+        <div class="panel" id="section2">
+            <!-- Contenu de la section 2 -->
+                Le contenu, les graphismes, les illustrations, les textes, les vidéos, les animations, les sons, les logos, les gifs et les icônes ainsi que leur mise en forme dans le jeu Gohang sont la propriété exclusive de Bellais, à l'exception des marques, logos ou contenus appartenant à d'autres sociétés partenaires ou auteurs.
 
-        <footer>
-            <p>Pour toute question ou préoccupation, veuillez nous contacter à [Votre adresse e-mail ou formulaire de contact].</p>
-        </footer>
+Toute reproduction, distribution, modification, adaptation, retransmission ou publication, même partielle, de ces différents éléments est strictement interdite sans l'accord exprès par écrit de Bellais. Cette représentation ou reproduction, par quelque procédé que ce soit, constitue une contrefaçon sanctionnée par les articles L.3335-2 et suivants du Code de la propriété intellectuelle. Le non-respect de cette interdiction constitue une contrefaçon pouvant engager la responsabilité civile et pénale du contrefacteur.
+            </div>
+        </div>
+
+        <!-- D'autres sections suivent le même modèle -->
+
+        <div class="accordion" onclick="toggleSection('section3')">Conditions d'Utilisation</div>
+        <div class="panel" id="section3">
+                L'utilisation du jeu Gohang est réservée à un usage strictement personnel. Tout usage à des fins commerciales ou publicitaires est interdit.
+            </div>
+        </div>
+
+        <div class="accordion" onclick="toggleSection('section4')">Limitation de Responsabilité</div>
+        <div class="panel" id="section4">
+                Bellais ne saurait être tenu responsable des erreurs rencontrées sur le site, des problèmes techniques, de l'interprétation des informations publiées et des conséquences de leur utilisation. En conséquence, l'utilisateur reconnaît utiliser ces informations sous sa responsabilité exclusive.
+            </div>
+        </div>
+
+        <div class="accordion" onclick="toggleSection('section5')">Politique de Confidentialité</div>
+        <div class="panel" id="section5">
+                Les données personnelles collectées lors de l'utilisation du jeu sont traitées conformément à notre politique de confidentialité. Nous nous engageons à protéger la vie privée de nos utilisateurs.
+
+                Pour toute question ou préoccupation, veuillez nous contacter à eliott.pro2004@gmail.com.
+            </div>
+        </div>
+
+        <div class="accordion" onclick="toggleSection('section6')">Politique de Confidentialité</div>
+        <div class="panel" id="section6">
+                Bellais se réserve le droit de modifier les présentes mentions à tout moment. L'utilisateur s'engage donc à les consulter régulièrement.
+        </div>
+
+        <div class="accordion" onclick="toggleSection('section7')">Politique de Confidentialité</div>
+        <div class="panel" id="section7">
+                Le présent jeu et ses conditions d'utilisation sont régis par le droit Français, quel que soit le lieu d'utilisation. En cas de contestation éventuelle et après l'échec de toute tentative de recherche d'une solution amiable, les tribunaux Français seront seuls compétents pour connaître de ce litige.
+
+                Pour toute question ou préoccupation, veuillez nous contacter à eliott.pro2004@gmail.com .
+        </div>
+        <div class="yes">
+            <a href="/acceuil" class="yes2">Retour à l'accueil</a>
+        </div>
     </div>
+
+    <!-- Script JavaScript pour gérer le comportement des menus déroulants -->
+    <script>
+        function toggleSection(sectionId) {
+            var section = document.getElementById(sectionId);
+            var accordion = section.previousElementSibling;
+
+            // Affiche ou cache le contenu et change l'état de l'en-tête
+            section.style.display = (section.style.display === 'none' || section.style.display === '') ? 'block' : 'none';
+            accordion.classList.toggle('active'); // Ajoute ou retire la classe "active"
+        }
+    </script>
 </body>
 </html>
 {{end}}

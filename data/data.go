@@ -12,3 +12,4 @@ type Joueur struct {
 	Display       string
 	Img           string
 }
+//sert a r

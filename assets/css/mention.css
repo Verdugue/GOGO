@@ -5,10 +5,10 @@
 
 
 .yes2 {
-    margin-top:10px;
+    margin-top:30px;
     transition: all .5s ease;
     color: #fff;
-    border: 3px solid white;
+    border: 3px solid #404040;
     border-radius:20px;
     font-family:'MyPolice', sans-serif;
     text-transform: uppercase;
@@ -23,16 +23,106 @@
     }
     
     .yes2:hover {
-    margin-top:10px;
+    margin-top:30px;
     color: #ffffff;
-    background-color: #292929;
+    background-color: #747474;
     border-radius:20px;
     }
     
     .yes2 {
-    margin-top:10px;
+    margin-top:30px;
     text-decoration:none;
     color:black;
     border-radius:20px;
     
     }
+
+    body {
+        font-family: 'Arial', sans-serif;
+        line-height: 1.6;
+        background-color: #f4f4f4;
+        padding: 20px;
+        color: #333;
+    }
+    .container {
+        max-width: 700px;
+        margin: auto;
+        background: #fff;
+        padding: 20px;
+        border: 1px solid #ccc;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    }
+    h1, h2 {
+        color: #0056b3;
+    }
+    p {
+        margin: 10px 0;
+    }
+    .section {
+        margin-bottom: 20px;
+    }
+    footer {
+        text-align: center;
+        margin-top: 30px;
+        font-size: 0.8em;
+        color: #666;
+    }
+.home-button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 20px;
+    background-color: #0059ba;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.home-button:hover {
+    background-color: #0e4d95;
+}
+
+
+
+.accordion {
+   border-top: 1px solid #b3b3b3;
+    background-color: #eee;
+    color: #000;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    transition: 0.4s;
+    position: relative; /* Ajouté pour le positionnement de la flèche */
+}
+
+.accordion:after {
+    
+    content: '\25B6';  /* Flèche vers la droite */
+    color: #444;
+    font-size: 20px;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: transform 0.4s;
+}
+
+.accordion.active:after {
+    transform: translateY(-50%) rotate(90deg); /* Flèche tournée vers le bas */
+}
+
+.panel {
+    border-left:solid #ff9696 3px;
+    padding: 0 18px;
+    display: none;
+    background-color: white;
+    overflow: hidden;
+}
+
+
+.yes {
+    margin-top:30px;
+    
+}

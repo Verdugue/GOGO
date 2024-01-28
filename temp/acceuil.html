@@ -7,12 +7,22 @@
     <link rel="stylesheet" href="../static/css/acceuil.css">
 </head>
 <body>
+
+    <!-- Conteneur principal -->
     <div class="giga-container">
     <div class="container">
+
+        <!-- Titre de la page -->
         <h1>Jeu   du   pe_du</h1>
+
+        <!-- Sous-titre / Instruction -->
         <p id="h2">Choisissez la catégorie : </p>
+
+        <!-- Sélection de la difficulté ou de la catégorie pour le jeu -->
         <div class="difficulty-selection">
             <form action="/jeu" method="get">
+
+                <!-- Menu déroulant pour sélectionner la difficulté ou la catégorie -->
                 <select name="difficulty" id="difficulty-select">
                     <option value="facile">Facile</option>
                     <option value="moyen">Moyen</option>
@@ -23,11 +33,13 @@
                     <option value="musique">Musique</option>
                     <option value="sport">Sport</option>
                 </select>
+                <!-- Bouton de soumission sous forme d'image -->
                 <input id="submit" type="image" name="submit" src="../static/img/fleche.png" alt="Submit"  />
             </form>
         </div>
     </div>
     
+    <!-- Liens additionnels vers d'autres pages comme la page d'Aide et les Mentions Légales -->
     <div class="additional-links">
             <a href="/regle" class="aide">Page d'Aide</a>
             <a href="/mention" class="legales">Mentions Légales</a>

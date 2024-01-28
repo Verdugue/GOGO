@@ -4,39 +4,58 @@
 <head>
     <meta charset="UTF-8">
     <title>Aide - Jeu du Pendu</title>
+    <link rel="stylesheet" href="../static/css/aide.css">
 </head>
 <body>
-    <div class="titre">
-        <h1>Comment Jouer au pendu</h1>
-        <h5>Tutoriel complet</h5>
-    </div>
-    <div class="debuter">
-        <h2>Debuter Le jeux</h2>
-        <p>Pour commencer a jouer, vous pouvez choisir plusieurs catégorie parmie : difficulté de facile a difficile, Pays, capitales, animaux etc..</p>
-        <p>Apres avoir selectionner la categorie : cliquer sur la fleche a coter du menu déroulant, cela vous lancera la partie</p>
-        <div id="debutergif">
-            <img src="../static/img/debuter.gif">
+    <!-- Première section : Introduction au jeu -->
+    <div class="wrapper">
+        <div class="header">
+            <div class="title-box">
+                <h2>Debuter Le jeu</h2><!-- Titre de la section -->
+            </div>
+        </div>
+        <div class="debuter">
+            <div class="debuter2">
+                <!-- Instructions sur la façon de commencer à jouer -->
+                <p>Pour commencer à jouer, vous pouvez choisir plusieurs catégories parmi : difficulté de facile à difficile, Pays, capitales, animaux etc...</p>
+                <p>Après avoir sélectionné la catégorie : cliquez sur la flèche à côté du menu déroulant, cela vous lancera la partie</p>
+            </div>
+            <div id="debutergif">
+                <!-- Image ou GIF représentatif pour la section -->
+                <p>Voici une vidéo représentative :</p>
+                <img id="gifD" src="../static/img/debuter.gif" alt="Débuter le jeu">
+            </div>
         </div>
     </div>
 
-    <div class="jouer">
-        <h2>Debuter Le jeux</h2>
-        <p>Comment ca se joue ? </p>
-        <p>Le jeu du pendu est un jeu de devinettes classique.</br> Un mot est choisi au hasard et le joueur doit le deviner en proposant des lettres.<br> Si la lettre proposée fait partie du mot, elle sera révélée. Sinon, un élément du pendu est dessiné.<br> Le but est de deviner le mot avant que le dessin du pendu ne soit complété.</p>
-        <p>Vous pourrez donc grace au bouton contenant les lettres faire vos choix de devinette: </p>
-        <p>Vous avez finis les jeux, vous voulez recommencer, il vous suffit de cliquer sur le bouton en bas de la div. (tsais le mec pense que tout le monde connait une div mdrrr)</p>
-        <div id="debutergif">
-            <img src="../static/img/jouer.gif">
+    <!-- Deuxième section : Conseils pour jouer -->
+    <div class="wrapper">
+        <div class="header">
+            <div class="title-box">
+                <h2>Comment jouer</h2> <!-- Titre de la section -->
+            </div>
         </div>
-    
+        <div class="debuter">
+            <div class="debuter2">
+                <!-- Répétition des instructions (peut-être à modifier ou à supprimer) -->
+                <p>Pour commencer à jouer, vous pouvez choisir plusieurs catégories parmi : difficulté de facile à difficile, Pays, capitales, animaux etc...</p>
+                <p>Après avoir sélectionné la catégorie : cliquez sur la flèche à côté du menu déroulant, cela vous lancera la partie</p>
+            </div>
+            <div class="conseil">
+                <ul>
+                    <li>Commencez par deviner les voyelles, car elles sont courantes dans de nombreux mots.</li>
+                    <li>Pensez aux lettres communes comme 'T', 'N', 'S', 'E' et 'R'.</li>
+                    <li>Essayez de deviner le thème du mot si vous jouez dans une catégorie spécifique.</li>
+                </ul>
+            </div>
+            <div id="debutergif">
+                <!-- Image ou GIF représentatif pour la section -->
+                <p>Voici une vidéo représentative :</p>
+                <img id="gifD" src="../static/img/jouer.gif" alt="Débuter le jeu">
+            </div>
+        </div>
     </div>
-    <div class="conseil">
-        <ul>
-            <li>Commencez par deviner les voyelles, car elles sont courantes dans de nombreux mots.</li>
-            <li>Pensez aux lettres communes comme 'T', 'N', 'S', 'E' et 'R'.</li>
-            <li>Essayez de deviner le thème du mot si vous jouez dans une catégorie spécifique.</li>
-        </ul>
-    </div>
+    <!-- Lien pour revenir à l'accueil -->
     <div class="yes">
         <a class="yes2" href="/acceuil">Revenir à l'acceuil.</a>
     </div>

@@ -7,43 +7,58 @@
     <link rel="stylesheet" href="../static/css/jeux.css">
 </head>
 <body class="{{.Difficulty}}">
+    <!-- Conteneur principal -->
     <div class="container-off">
         <div class="container">
+            <!-- Titre de la page -->
             <h1>Jeu du Pendu</h1>
-            
+            <!-- Informations sur le jeu en cours -->
             <div class="game-info">
+                <!-- Affiche le mot à deviner avec des _ pour les lettres non devinées -->
                 <p>Mot à deviner : {{.DisplayWord}}</p>
+                <!-- Affiche une image en fonction du nombre d'erreurs -->
                     <img class="imageee"src="../static/img/pd{{.Errors}}.png">
+                    <!-- Affiche le nombre d'erreurs et le nombre maximum d'essais -->
                 <p>Erreurs : {{.Errors}} / {{.MaxTries}}</p>
             </div>
+
+            <!-- Logique pour déterminer si le jeu est terminé -->
             {{if or (eq .DisplayWord .Word) (ge .Errors .MaxTries)}}
+            <!-- Si le joueur a gagné -->
                 {{/* Si le joueur a gagné */}}
                 {{if eq .DisplayWord .Word}}
                 <div class="fin">
                     <img src="../static/img/bravo.gif">
                 </div>
                 {{else}}
+                 <!-- Si le joueur a perdu -->
                     {{/* Si le joueur a perdu */}}
                     <div class="fin">
                         <img id="loose" src="../static/img/oops.gif">
                     </div>
+                    <!-- Révélation du mot en cas de défaite -->
                     <div class="reveal">
                     <p id="reveal">Mot caché était :</p> <p id="wordd">{{.Word}}</p><!-- Afficher le mot caché en cas de défaite -->
                 </div>
                 {{end}}
             {{else}}
+                <!-- Si le jeu est encore en cours -->
+                <!-- Affichage des lettres déjà devinées -->
                 {{/* Le jeu est encore en cours, afficher les lettres déjà devinées */}}
                 <div class="tester">
                     <p>Lettres déjà devinées : {{range $key, $value := .GuessedLetters}}{{$key}} {{end}}</p>
                 </div>
+                <!-- Boutons pour deviner les lettres -->
                 <div class="letters">
                     {{range .Alphabet}}
                         <button class="letter-button" onclick="guessLetter('{{.}}')">{{.}}</button>
                     {{end}}
                 </div>
             {{end}}
+            <!-- Script JS pour la logique du jeu -->
             <script src="../static/js/scrypt.js"></script>
 
+            <!-- Lien pour changer de difficulté -->
             <div class="yes">
                 <a class="yes2" href="/acceuil">Changer de difficultée.</a>
             </div>
